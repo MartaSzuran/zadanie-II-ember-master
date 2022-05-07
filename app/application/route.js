@@ -11,14 +11,16 @@ export default class ApplicationRoute extends Route {
       password: 'admin123',
       email: 'admin@admin.com',
       isAdmin: true,
-      photoURL: 'https://d-art.ppstatic.pl/kadry/k/r/e3/2e/5ee3783889b3d_o_large.jpg',
+      photoURL:
+        'https://d-art.ppstatic.pl/kadry/k/r/e3/2e/5ee3783889b3d_o_large.jpg',
     };
     const user2 = {
       id: 2,
       username: 'user',
       password: 'user123',
       email: 'user@user.com',
-      photoURL: 'https://d-art.ppstatic.pl/kadry/k/r/68/7d/5ee36919e4c79_o_large.jpg',
+      photoURL:
+        'https://d-art.ppstatic.pl/kadry/k/r/68/7d/5ee36919e4c79_o_large.jpg',
     };
 
     const user1Model = this.store.createRecord('user', user1);
