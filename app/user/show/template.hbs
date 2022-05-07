@@ -17,4 +17,10 @@
   </div>
 </div>
 
+{{!-- it could also be <Posts::List @posts={{this.model.posts}} --}}
+
+{{#each this.model.posts as |post|}}
+  <Posts::List::Item @post={{post}} />
+{{/each}}
+
 {{outlet}}
