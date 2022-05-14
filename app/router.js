@@ -21,6 +21,6 @@ Router.map(function () {
     this.route('settings');
   });
   this.route('login');
-  
+
   this.route('register');
 });
