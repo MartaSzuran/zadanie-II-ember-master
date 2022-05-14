@@ -1,25 +1,8 @@
 {{page-title "Show"}}
 
 {{!-- <User::Details @user={{this.model}}/> --}}
-<User::Details @user={{this.model}}/>
-    {{yield}}
-
-<div class="card mx-auto" style="width: 18rem; ">
-  <img src='{{this.model.photoURL}}' class="card-img-top" alt="photo">
-  <div class="card-body">
-    <h5 class="card-title">{{this.model.username}}</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{this.model.username}}</li>
-    <li class="list-group-item">{{this.model.password}}</li>
-    <li class="list-group-item">{{this.model.email}}</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
+{{!-- przypisanie nazwy --}}
+<User::Details @user={{this.model}} @ mojeImie='Kamil'/>
 
 {{!-- it could also be <Posts::List @posts={{this.model.posts}}/> --}}
 
