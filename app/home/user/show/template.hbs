@@ -1,13 +1,7 @@
 {{page-title "Show"}}
 
-{{!-- <User::Details @user={{this.model}}/> --}}
-{{!-- przypisanie nazwy --}}
-<User::Details @user={{this.model}} @ mojeImie='Kamil'/>
+<User::Details @user={{this.model}}/>
 
-{{!-- it could also be <Posts::List @posts={{this.model.posts}}/> --}}
-
-{{#each this.model.posts as |post|}}
-  <Posts::List::Item @post={{post}} />
-{{/each}}
+<Posts::List @posts={{this.model.posts}}/>
 
 {{outlet}}
