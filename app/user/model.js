@@ -15,4 +15,5 @@ export default class UserModel extends Model {
   isAdmin;
 
   @hasMany('post') posts;
+  @hasMany('like') likes;
 }
