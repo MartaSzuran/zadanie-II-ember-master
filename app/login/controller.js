@@ -31,7 +31,7 @@ export default class LoginController extends Controller {
     if (isUserExist) {
       const user = users.firstObject;
       this.loggedAs.set('id', user.id);
-      window.location.href='/';
+      window.location.href = '/';
     }
   }
 }

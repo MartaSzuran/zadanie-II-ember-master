@@ -10,22 +10,22 @@ export default class RegisterController extends Controller {
 
   @action
   onLoginChange(event) {
-    this.model.username = event.target.value
+    this.model.username = event.target.value;
   }
 
   @action
   onPasswordChange(event) {
-    this.model.password = event.target.value
+    this.model.password = event.target.value;
   }
 
   @action
   onEmailChange(event) {
-    this.model.email = event.target.value
+    this.model.email = event.target.value;
   }
 
   @action
   onPhotoURLChange(event) {
-    this.model.photoURL = event.target.value
+    this.model.photoURL = event.target.value;
   }
 
   @action

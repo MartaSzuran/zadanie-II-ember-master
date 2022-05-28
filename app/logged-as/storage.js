@@ -4,8 +4,8 @@ const Storage = StorageObject.extend();
 
 Storage.reopenClass({
   initialState() {
-  return { id: null };
-}
+    return { id: null };
+  },
 });
 
 export default Storage;
