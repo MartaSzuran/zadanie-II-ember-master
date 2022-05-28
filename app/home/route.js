@@ -11,6 +11,6 @@ export default class HomeRoute extends Route {
       this.router.transitionTo('login');
       return;
     }
-    await this.session.setCurrentUser
+    await this.session.setCurrentUser()
   }
 }
