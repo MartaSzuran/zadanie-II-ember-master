@@ -14,6 +14,8 @@
             type='email'
             class='form-control'
             id='exampleFormControlInput1'
+            value={{@title}}
+            {{on 'input' @onTitleChange}}
           />
         </div>
         <div class='mb-3'>
@@ -25,14 +27,22 @@
             class='form-control'
             id='exampleFormControlTextarea1'
             rows='3'
+            value={{@content}}
+            {{on 'input' @onContentChange}}
           ></textarea>
         </div>
       </div>
       <div class='modal-footer'>
-        <button type='button' class='btn btn-primary'>Create</button>
+        <button
+          type='button'
+          class='btn btn-primary'
+          disabled={{@hasEmptyField}}
+          {{on 'click' @onSave}}
+        >Create</button>
         <button
           type='button'
           class='btn btn-danger'
+          disabled={{@hasEmptyField}}
           {{on 'click' @onClose}}
         >Cancel</button>
       </div>
