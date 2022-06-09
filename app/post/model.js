@@ -5,6 +5,6 @@ export default class PostModel extends Model {
   @attr('string') title;
   @attr('string') body;
   @attr('boolean', { defaultValue: false }) isDeleted;
-  @belongsTo('user') owner;
+  @belongsTo('user', { autoSave: true }) owner;
   @hasMany('like') likes;
 }
