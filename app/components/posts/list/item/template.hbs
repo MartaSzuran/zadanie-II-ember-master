@@ -2,7 +2,7 @@
   <div class='card-body'>
     <h5 class='card-title'>
       <h6 class='card-subtitle mb-2 text-muted'>Date:
-        {{@post.fullDate}}</h6>
+        {{moment-format @post.createdAt 'DD-MM-YYYY HH:mm'}}</h6>
       <LinkTo @route='home.post.show' @model={{@post}}>{{@post.title}}</LinkTo>
     </h5>
     <h6 class='card-subtitle mb-2 text-muted'>Owner:
