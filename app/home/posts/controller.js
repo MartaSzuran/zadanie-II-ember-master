@@ -9,8 +9,16 @@ export default class HomePostsController extends Controller {
 
   queryParams = ['dateFrom', 'dateTo'];
 
-  get shouldBeFilteredByDate() {
+  get shouldBeFilteredBetweenDates() {
     return Boolean(this.startDate && this.endDate);
+  }
+
+  get shouldBeFilteredFromDates() {
+    return !this.shouldBeFilteredBetweenDates && Boolean(this.startDate);
+  }
+
+  get shouldBeFilteredToDates() {
+    return !this.shouldBeFilteredBetweenDates && Boolean(this.endDate);
   }
 
   get startDate() {
@@ -45,6 +53,18 @@ export default class HomePostsController extends Controller {
           undefined,
           '[]'
         );
+      });
+    }
+
+    if (this.shouldBeFilteredFromDates) {
+      return posts.filter((post) => {
+        return moment(post.createdAt).isSameOrAfter(this.startDate);
+      });
+    }
+
+    if (this.shouldBeFilteredToDates) {
+      return posts.filter((post) => {
+        return moment(post.createdAt).isSameOrBefore(this.endDate);
       });
     }
     return posts;
