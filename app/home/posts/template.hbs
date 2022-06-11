@@ -23,6 +23,13 @@
   class='reset btn btn-danger'
   {{on 'click' this.clearFilters}}
 >Clear</button>
-<Posts::List @posts={{this.filteredPosts}} />
+<button
+  type='button'
+  class='btn btn-secondary'
+  {{on 'click' this.onSortToggle}}
+>Sort {{this.sortLabel}}</button>
+
+<Posts::List @posts={{this.sortedPosts}} />
 <Post::Create />
+
 {{outlet}}
