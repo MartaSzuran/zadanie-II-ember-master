@@ -18,9 +18,8 @@ export default class HomePostsController extends Controller {
 
   queryParams = ['dateFrom', 'dateTo', 'sort'];
 
-  @action
-  chooseDestination(city) {
-    this.set('destination', city);
+  get shouldBeFilteredByAuthor() {
+    return Boolean(this.selectedAuthors.length);
   }
 
   get shouldBeFilteredBetweenDates() {
@@ -65,7 +64,15 @@ export default class HomePostsController extends Controller {
   }
 
   get filteredPosts() {
-    const posts = this.model;
+    let posts = this.model;
+    if (this.shouldBeFilteredByAuthor) {
+      posts = posts.filter((post) => {
+        return this.selectedAuthors.find((author) => {
+          return author.get('id') === post.owner.get('id');
+        });
+      });
+    }
+
     if (this.shouldBeFilteredByDate) {
       return posts.filter((post) => {
         return moment(post.createdAt).isBetween(
