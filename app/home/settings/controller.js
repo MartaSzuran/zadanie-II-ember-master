@@ -6,12 +6,12 @@ export default class SettingsController extends Controller {
   @service store;
   @service router;
 
-  get shouldDisabledButton () {
+  get shouldDisabledButton() {
     return !this.model.hasDirtyAttributes;
   }
 
   @action
-  discardChanges(){
+  discardChanges() {
     this.model.rollbackAttributes();
   }
 

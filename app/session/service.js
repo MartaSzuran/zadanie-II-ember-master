@@ -24,11 +24,11 @@ export default class SessionService extends Service {
     }
   }
 
-  logoutUser() {    
-      this.loggedAs.set('id', null);
-      window.location.href = '/login';
-    }
-  
+  logoutUser() {
+    this.loggedAs.set('id', null);
+    window.location.href = '/login';
+  }
+
   async setCurrentUser() {
     const userId = this.loggedAs.get('id');
     const user = await this.store.findRecord('user', userId);

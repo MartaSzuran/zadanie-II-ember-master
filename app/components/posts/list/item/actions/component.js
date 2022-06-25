@@ -49,9 +49,4 @@ export default class PostsListItemActionsComponent extends Component {
   async onDelete() {
     await this.currentPost.destroyRecord();
   }
-
-  @action
-  chooseAuthors() {
-    this.selectedAuthors = author;
-  }
 }

@@ -6,7 +6,7 @@ export default class LoginRoute extends Route {
   @service session;
 
   beforeModel() {
-    const {isUserLoggedIn} = this.session;
+    const { isUserLoggedIn } = this.session;
 
     if (isUserLoggedIn) {
       this.router.transitionTo('home');

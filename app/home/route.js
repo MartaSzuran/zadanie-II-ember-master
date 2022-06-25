@@ -6,11 +6,11 @@ export default class HomeRoute extends Route {
   @service session;
 
   async beforeModel() {
-    const {isUserLoggedIn} = this.session;
+    const { isUserLoggedIn } = this.session;
     if (!isUserLoggedIn) {
       this.router.transitionTo('login');
       return;
     }
-    await this.session.setCurrentUser()
+    await this.session.setCurrentUser();
   }
 }

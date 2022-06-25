@@ -22,7 +22,7 @@ export default class LoginController extends Controller {
   @action
   async onSubmit(event) {
     event.preventDefault();
-    const {loginValue, passwordValue} = this;
+    const { loginValue, passwordValue } = this;
     await this.session.loginUser(loginValue, passwordValue);
   }
 }
