@@ -35,4 +35,29 @@ export default class SessionService extends Service {
     // console.log(user.username);
     this.currentUser = user;
   }
+
+  async loginOrRegisterBy0auth(profile) {
+    const isUserExist = false;
+    if (isUserExist) {
+      //add function to login
+      return;
+    }
+
+    const username = profile.nickname;
+    const email = profile.email;
+    const password = '';
+    const photoURL = profile.picture;
+
+    const user = await this.store
+      .createRecord('user', {
+        username,
+        email,
+        password,
+        photoURL,
+      })
+      .save();
+
+    this.loggedAs.set('id', user.id);
+    window.location.href = '/';
+  }
 }
