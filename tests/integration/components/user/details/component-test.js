@@ -10,7 +10,6 @@ module('Integration | Component | user/details', function (hooks) {
 
   test('it renders', async function (assert) {
     const user = this.server.create('user');
-    console.log(user);
 
     this.set('user', user);
 
