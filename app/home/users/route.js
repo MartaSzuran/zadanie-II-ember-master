@@ -7,7 +7,6 @@ export default class UsersRoute extends Route {
   async model() {
     await new Promise((resolve) => {
       setTimeout(() => {
-        console.log('dupa');
         resolve();
       }, 2000);
     });
